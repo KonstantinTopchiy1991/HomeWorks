@@ -1,18 +1,18 @@
 // Условные операторы
 
 /*Если а  - четное посчитать а*b, иначе a+b*/
-function funcOne(a, b) {
-    if (a % 2 ===0) {
-        console.log(a * b);
+function evenNumber(a, b) {
+    if (a % 2 === 0) {
+        return (a * b);
     } else {
-        console.log(a + b);
+        return (a + b);
     }
 };
-//funcOne();
+console.log(evenNumber(5, 3));
 
 
 /* Определить какой четверти принадлежит точка с координатами (x, y)*/
-function funcTwo(x, y) {
+function quarterNumber(x, y) {
     if (x > 0 && y > 0){
         console.log("firstQuarter");
     } else if (x > 0 && y < 0){
@@ -23,10 +23,10 @@ function funcTwo(x, y) {
         console.log("fourthQuarter");
     }
 };
-//funcTwo();
+//quarterNumber();
 
 /*Найти суммы только положительных из трех чисел*/
-function funcThree(a, b, c) {
+function sumNumber(a, b, c) {
 
     let sum;
     let posOne = 0;
@@ -45,20 +45,20 @@ function funcThree(a, b, c) {
     sum = posOne + posTwo + posThree;
     console.log(sum);
 };
-//funcThree();
+//sumNumber();
 
 /*Посчитать выражение макс(a*b*c, a+b+c) + 3*/
-function funcFour(a, b ,c) {
+function maxExp(a, b ,c) {
     if ((a * b *c) > (a + b + c)){
         console.log((a * b * c) + 3);
     } else {
         console.log((a + b + c) + 3);
     }
 };
-//funcFour();
+//maxExp();
 
 /*Написать программу определения оценки студента по его рейтингу*/
-function funcFive(rating) {
+function ratingStudent(rating) {
     if (rating >= 90 && rating <= 100){
         console.log("A");
     }
@@ -78,13 +78,13 @@ function funcFive(rating) {
         console.log("F");
     }
 };
-//funcFive();
+//ratingStudent();
 
 
 //Циклы
 
 /*Найти сумму четных чисел и их количество в диапазоне от 1 до 99*/
-function funcSix() {
+function evenNumbers() {
     let sum = 0;
     let quantity = 0;
     for (let i = 0; i <= 99; i++) {
@@ -96,10 +96,10 @@ function funcSix() {
     console.log("Сумма = " + sum + ", Количество = " + quantity);
 
 };
-//funcSix();
+//evenNumbers();
 
 /*Проверить простое ли число?*/
-function funcSeven(number) {
+function primeNumber(number) {
     if (number === 1){
         console.log("false");
     }
@@ -113,10 +113,10 @@ function funcSeven(number) {
         }
     }
 };
-//funcSeven();
+//primeNumber();
 
 /*Найти корень натурального числа с точностью до целого*/
-function funcEight(a) {
+function rootNumber(a) {
     let num = 1;
     
     while (num * num <= a){
@@ -125,10 +125,10 @@ function funcEight(a) {
 
     console.log(num - 1);
 };
-//funcEight();
+//rootNumber();
 
 /*Вычислить факториал числа n. n! = 1*2*...*n-1*n*/
-function funcNine(x){
+function factorialNumber(x){
     let factorial = 1;
     if (x > 1) {
         for (let i = 2; i <= x; i++) {
@@ -137,10 +137,10 @@ function funcNine(x){
     }
     console.log(factorial);
 };
-//funcNine();
+//factorialNumber();
 
 /*Посчитать сумму цифр заданного числа*/
-function funcTen(number) {
+function sumNumbers(number) {
     let sum = 0;
 
     while (number != 0){
@@ -149,24 +149,24 @@ function funcTen(number) {
     }
     console.log(sum);
 };
-//funcTen();
+//sumNumbers();
 
 /*Вывести число, которое является зеркальным отображением последовательности цифр заданного числа,
  например, задано число 123, вывести 321*/
-function funcEleven(number) {
+function reverseNumber(number) {
     let numberAsString = String(number);
     let splitNumber = numberAsString.split('');
     let splitReversedNumber = splitNumber.reverse();
     let reversedNumber = splitReversedNumber.join('');
     console.log(reversedNumber);
 };
-//funcEleven();
+//reverseNumber();
 
 
 //Одномерные массивы
 
 /*Найти минимальный элемент массива*/
-function funcMinElem(arr) {
+function minOfArray(arr) {
     let min = arr[0];
     for (let i = 0; i < arr.length; i++){
         if (arr[i] <= min){
@@ -175,10 +175,10 @@ function funcMinElem(arr) {
     }
     console.log(min);
 };
-//funcMinElem();
+//minOfArray();
 
 /*Найти максимальный элемент массива*/
-function funcMaxElem(arr) {
+function maxOfArray(arr) {
     let max = arr[0];
     for (let i = 0; i < arr.length; i++){
         if (arr[i] > max){
@@ -187,10 +187,10 @@ function funcMaxElem(arr) {
     }
     console.log(max);
 };
-//funcMaxElem();
+//maxOfArray();
 
 /*Найти индекс минимального элемента массива*/
-function funcIndexMinElem(arr) {
+function minIndexOfArray(arr) {
     let index = 0;
     let minValue = arr[0];
     for (let i = 0; i < arr.length; i++){
@@ -201,10 +201,10 @@ function funcIndexMinElem(arr) {
     }
     console.log(index);
 };
-//funcIndexMinElem();
+//minIndexOfArray();
 
 /*Найти индекс максимального элемента массива*/
-function funcIndexMaxElem(arr) {
+function maxIndexOfArray(arr) {
     let index = 0;
     let maxValue = arr[0];
     for (let i = 0; i < arr.length; i++){
@@ -215,7 +215,7 @@ function funcIndexMaxElem(arr) {
     }
     console.log(index);
 };
-//funcIndexMaxElem();
+//maxIndexOfArray();
 
 /*Посчитать сумму элементов массива с нечетными индексами*/
 function sumElemOddIndex(arr) {
@@ -230,11 +230,11 @@ function sumElemOddIndex(arr) {
 //sumElemOddIndex();
 
 /*Сделать реверс массива (массив в обратном направлении)*/
-function funcRevers(arr) {
+function reversOfArray(arr) {
     let rev = arr.reverse();
     console.log(rev);
 };
-//funcRevers();
+//reversOfArray();
 
 /*Посчитать количество нечетных элементов массива*/
 function funcOddElements(arr) {
@@ -249,7 +249,7 @@ function funcOddElements(arr) {
 //funcOddElements();
 
 /*Поменять местами первую и вторую половину массива, например, для массива 1 2 3 4, результат 3 4 1 2*/
-function funcReplaceHalf(arr) {
+function replaceHalfArray(arr) {
     let half = arr.length / 2;
     let div = half + arr.length % 2;
 
@@ -260,10 +260,10 @@ function funcReplaceHalf(arr) {
     }
     console.log(arr);
 }
-//funcReplaceHalf();
+//replaceHalfArray();
 
 /*Отсортировать массив (пузырьком (Bubble), выбором (Select), вставками (Insert))*/
-function funcBubble(arr) {
+function bubbleSort(arr) {
     for (let i = 0; i < arr.length; i++){
         for (let j = 0; j < arr.length - 1; j++){
             if (arr[j] > arr[j +1]){
@@ -275,9 +275,9 @@ function funcBubble(arr) {
     }
     console.log(arr);
 }
-//funcBubble();
+//bubbleSort();
 
-function funcSelect(arr) {
+function selectSort(arr) {
     for (i = 0; i < arr.length - 1; i++) {
         let minElem = i;
         for (let j = i + 1; j < arr.length; j++) {
@@ -290,9 +290,9 @@ function funcSelect(arr) {
     }
     console.log(arr);
 }
-//funcSelect();
+//selectSort();
 
-function funcInsert(arr) {
+function insertSort(arr) {
 
     for(let i = 1; i < arr.length; i++){
         let value = arr[i];
@@ -306,7 +306,7 @@ function funcInsert(arr) {
     }
     console.log(arr);
 }
-//funcInsert();
+//insertSort();
 
 
 //Функции
@@ -346,5 +346,95 @@ function dayOfWeek(day){
 
 /*Вводим число (0-999), получаем строку с прописью числа.*/
 
+function numberToString(number) {
+    let str = String(number);
+    let arrNum = str.split('');
+    let arr0 = ['один', 'два', 'три', 'четыре', 'пять', 'шесть', 'семь', 'восемь', 'девять'];
+    let arr1 = ['десять', 'одинадцать', 'двенадцать', 'тринадцать', 'четырнадцать', 'пятнадцать', 'шестнадцать', 'семнадцать', 'восемнадцать', 'девятнадцать'];
+    let arr2 = ['двадцать', 'тридцать', 'сорок', 'пятьдесят', 'шестдесят', 'семдесят', 'восемдесят', 'девяносто'];
+    let arr3 = ['сто', 'двесте', 'триста', 'четыреста', 'пятсот', 'шестсот', 'семсот', 'восемсот', 'девятсот'];
 
+    if (arrNum.length == 3 && arrNum[1] == 1) {
+        console.log(arr3[arrNum[0] - 1] + " " + arr1[arrNum[2]]);
+    } else if (arrNum.length == 3 && arrNum[1] == 0){
+        console.log(arr3[arrNum[0] - 1] + " " + arr0[arrNum[2] - 1]);
+    } else if (arrNum.length == 3) {
+        console.log(arr3[arrNum[0] - 1] + " " + arr2[arrNum[1] - 2] + " " + arr0[arrNum[2] - 1]);
+    } else if (arrNum.length == 2 && arrNum[0] == 1) {
+        console.log(arr1[arrNum[1]]);
+    } else if (arrNum.length == 2 && arrNum[0] != 1) {
+        console.log(arr2[arrNum[0] - 2] + ' ' + arr0[arrNum[1] - 1]);
+    } else if (arrNum.length == 1) {
+        console.log(arr0[arrNum[0] - 1])
+    }
+}
+//numberToString();
+
+/*Вводим строку, которая содержит число, написанное прописью (0-999). Получить само число*/
+function strokaChislo(number){
+
+    let num = number.split(' ');
+    let newNum = 0;
+
+    switch(num[0]){
+        case 'сто': newNum += 100; break;
+        case 'двесте': newNum += 200; break;
+        case 'триста': newNum += 300; break;
+        case 'четыреста': newNum += 400; break;
+        case 'пятсот': newNum += 500; break;
+        case 'шестсот': newNum += 600; break;
+        case 'семсот': newNum += 700; break;
+        case 'восемсот': newNum += 800; break;
+        case 'девятсот': newNum += 900; break;
+    } //сотые
+
+    switch(num[1] || num[0]){
+        case 'двадцать': newNum += 20; break;
+        case 'тридцать': newNum += 30; break;
+        case 'сорок': newNum += 40; break;
+        case 'пятьдесят': newNum += 50; break;
+        case 'шестдесят': newNum += 60; break;
+        case 'семдесят': newNum += 70; break;
+        case 'восемдесят': newNum += 80; break;
+        case 'девяносто': newNum += 90; break;
+    }  //десятые
+
+    switch(num[1] || num[0]){
+        case  'десять': newNum += 10; break;
+        case  'одинадцать': newNum += 11; break;
+        case  'двенадцать': newNum += 12; break;
+        case  'тринадцать': newNum += 13; break;
+        case  'четырнадцеть': newNum += 14; break;
+        case  'пятнадцать': newNum += 15; break;
+        case  'шестнадцать': newNum += 16; break;
+        case  'семнадцать': newNum += 17; break;
+        case  'восемнадцать': newNum += 18; break;
+        case  'девятнадцать': newNum += 19; break;
+    }  // десять. одинадцать...
+
+    switch(num[2] || num[1] || num[0]){
+        case 'один': newNum += 1; break;
+        case 'два': newNum += 2; break;
+        case 'три': newNum += 3; break;
+        case 'четыре': newNum += 4; break;
+        case 'пять': newNum += 5; break;
+        case 'шесть': newNum += 6; break;
+        case 'семь': newNum += 7; break;
+        case 'восемь': newNum += 8; break;
+        case 'девять': newNum += 9; break;
+        case 'ноль': newNum += 0; break;
+    }  // простые
+
+    console.log(newNum);
+
+};
+//strokaChislo();
+
+/*Найти расстояние между двумя точками в двумерном декартовом пространстве.*/
+distance = (x1, y1, x2, y2) => {
+
+    console.log(Math.sqrt((Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2))));
+
+};
+//   distance();
 

@@ -17,7 +17,7 @@ public class AndroidHomeWork {
         '\n' + "primeNumber = " + primeNumber(7) +
         '\n' + "rootNumber = " + rootNumber(36) +
         '\n' + "factorialNumber = " + factorialNumber(5) +
-        '\n' + "sumNembers = " + sumNembers(15) +
+        '\n' + "sumNembers = " + sumNumbers(15) +
         '\n' + "reverseNumber = " + reverseNumber(124) +
         '\n' + "minOfArray = " + minOfArray(array) +
         '\n' + "maxOfArray = " + maxOfArray(array) +
@@ -168,7 +168,7 @@ public class AndroidHomeWork {
     }
 
     /*Посчитать сумму цифр заданного числа*/
-    public static int sumNembers(int number) {
+    public static int sumNumbers(int number) {
         int sum = 0;
 
         while (number != 0){
