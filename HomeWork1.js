@@ -8,22 +8,22 @@ function evenNumber(a, b) {
         return (a + b);
     }
 };
-console.log(evenNumber(5, 3));
+//console.log(evenNumber());
 
 
 /* Определить какой четверти принадлежит точка с координатами (x, y)*/
 function quarterNumber(x, y) {
     if (x > 0 && y > 0){
-        console.log("firstQuarter");
+        return "firstQuarter";
     } else if (x > 0 && y < 0){
-        console.log("secondQuarter");
+        return "secondQuarter";
     } else if (x < 0 && y < 0){
-        console.log("thirdQuarter");
+        return "thirdQuarter";
     } else {
-        console.log("fourthQuarter");
+        return "fourthQuarter";
     }
 };
-//quarterNumber();
+//console.log(quarterNumber());
 
 /*Найти суммы только положительных из трех чисел*/
 function sumNumber(a, b, c) {
@@ -43,77 +43,77 @@ function sumNumber(a, b, c) {
         posThree = c;
     }
     sum = posOne + posTwo + posThree;
-    console.log(sum);
+    return sum;
 };
-//sumNumber();
+//console.log(sumNumber());
 
 /*Посчитать выражение макс(a*b*c, a+b+c) + 3*/
 function maxExp(a, b ,c) {
     if ((a * b *c) > (a + b + c)){
-        console.log((a * b * c) + 3);
+        return ((a * b * c) + 3);
     } else {
-        console.log((a + b + c) + 3);
+        return ((a + b + c) + 3);
     }
 };
-//maxExp();
+//console.log(maxExp());
 
 /*Написать программу определения оценки студента по его рейтингу*/
 function ratingStudent(rating) {
     if (rating >= 90 && rating <= 100){
-        console.log("A");
+        return "A";
     }
     if (rating >= 75 && rating < 90){
-        console.log("B");
+        return "B";
     } 
     if (rating >= 60 && rating < 75){
-        console.log("C");
+        return "C";
     } 
     if (rating >= 40 && rating < 60){
-        console.log("D");
+        return "D";
     }
     if (rating >= 20 && rating < 40){
-        console.log("E");
+        return "E";
     } 
     if (rating >= 0 && rating < 20){
-        console.log("F");
+        return "F";
     }
 };
-//ratingStudent();
+//console.log(ratingStudent());
 
 
 //Циклы
 
 /*Найти сумму четных чисел и их количество в диапазоне от 1 до 99*/
-function evenNumbers() {
+function evenNumbers(a = 99) {
     let sum = 0;
     let quantity = 0;
-    for (let i = 0; i <= 99; i++) {
+    for (let i = 1; i <= a; i++) {
         if (i % 2 === 0){
             sum += i;
             quantity++;
         }
     }
-    console.log("Сумма = " + sum + ", Количество = " + quantity);
+    return ("Сумма = " + sum + ", Количество = " + quantity);
 
 };
-//evenNumbers();
+//console.log(evenNumbers());
 
 /*Проверить простое ли число?*/
 function primeNumber(number) {
     if (number === 1){
-        console.log("false");
+        return ("false");
     }
 
-    for(let i = 2; i < number; i++){
+    for(let i = 2; i < number + 1; i++){
         if (number % i === 0){
-            console.log("Составное");
+            return ("Составное");
             break;
         } else {
-            console.log("Простое");
+            return ("Простое");
         }
     }
 };
-//primeNumber();
+//console.log(primeNumber());
 
 /*Найти корень натурального числа с точностью до целого*/
 function rootNumber(a) {
@@ -123,9 +123,9 @@ function rootNumber(a) {
         num++;
     }
 
-    console.log(num - 1);
+    return (num - 1);
 };
-//rootNumber();
+//console.log(rootNumber(16));
 
 /*Вычислить факториал числа n. n! = 1*2*...*n-1*n*/
 function factorialNumber(x){
@@ -135,32 +135,31 @@ function factorialNumber(x){
             factorial *= i;
         }
     }
-    console.log(factorial);
+    return (factorial);
 };
-//factorialNumber();
+//console.log(factorialNumber(4));
 
 /*Посчитать сумму цифр заданного числа*/
 function sumNumbers(number) {
     let sum = 0;
-
-    while (number != 0){
-        sum += number % 10;
-        number /= 10;
+    for(let i = number; i > 0; i = i / 10){
+        i.toFixed(0);
+        sum = sum + (i%10);
     }
-    console.log(sum);
+    return (sum.toFixed(0));
 };
-//sumNumbers();
+//console.log(sumNumbers(10));
 
 /*Вывести число, которое является зеркальным отображением последовательности цифр заданного числа,
  например, задано число 123, вывести 321*/
 function reverseNumber(number) {
-    let numberAsString = String(number);
-    let splitNumber = numberAsString.split('');
-    let splitReversedNumber = splitNumber.reverse();
-    let reversedNumber = splitReversedNumber.join('');
-    console.log(reversedNumber);
+    let sum = 0;
+    for(let i = number; i > 0; i = Math.floor(i / 10)){
+        sum = sum * 10 + (i%10);
+    }
+    return sum;
 };
-//reverseNumber();
+//console.log(reverseNumber(124));
 
 
 //Одномерные массивы
@@ -173,9 +172,9 @@ function minOfArray(arr) {
             min = arr[i];
         }
     }
-    console.log(min);
+    return (min);
 };
-//minOfArray();
+//console.log(minOfArray());
 
 /*Найти максимальный элемент массива*/
 function maxOfArray(arr) {
@@ -185,9 +184,9 @@ function maxOfArray(arr) {
             max = arr[i];
         }
     }
-    console.log(max);
+    return (max);
 };
-//maxOfArray();
+//console.log(maxOfArray());
 
 /*Найти индекс минимального элемента массива*/
 function minIndexOfArray(arr) {
@@ -199,9 +198,9 @@ function minIndexOfArray(arr) {
             index = i;
         }
     }
-    console.log(index);
+    return (index);
 };
-//minIndexOfArray();
+//console.log(minIndexOfArray());
 
 /*Найти индекс максимального элемента массива*/
 function maxIndexOfArray(arr) {
@@ -213,9 +212,9 @@ function maxIndexOfArray(arr) {
             index = i;
         }
     }
-    console.log(index);
+    return (index);
 };
-//maxIndexOfArray();
+//console.log(maxIndexOfArray());
 
 /*Посчитать сумму элементов массива с нечетными индексами*/
 function sumElemOddIndex(arr) {
@@ -225,16 +224,16 @@ function sumElemOddIndex(arr) {
             sumIndex += arr[i];
         }
     }
-    console.log(sumIndex);
+    return (sumIndex);
 };
-//sumElemOddIndex();
+//console.log(sumElemOddIndex());
 
 /*Сделать реверс массива (массив в обратном направлении)*/
 function reversOfArray(arr) {
     let rev = arr.reverse();
-    console.log(rev);
+    return (rev);
 };
-//reversOfArray();
+//console.log(reversOfArray());
 
 /*Посчитать количество нечетных элементов массива*/
 function funcOddElements(arr) {
@@ -244,9 +243,9 @@ function funcOddElements(arr) {
             elem++;
         }
     }
-    console.log(elem);
+    return (elem);
 };
-//funcOddElements();
+//console.log(funcOddElements());
 
 /*Поменять местами первую и вторую половину массива, например, для массива 1 2 3 4, результат 3 4 1 2*/
 function replaceHalfArray(arr) {
@@ -258,9 +257,9 @@ function replaceHalfArray(arr) {
         arr[i] = arr[div + i];
         arr[div + i] = currentElem;
     }
-    console.log(arr);
+    return (arr);
 }
-//replaceHalfArray();
+//console.log(replaceHalfArray());
 
 /*Отсортировать массив (пузырьком (Bubble), выбором (Select), вставками (Insert))*/
 function bubbleSort(arr) {
@@ -273,9 +272,9 @@ function bubbleSort(arr) {
             }
         }
     }
-    console.log(arr);
+    return (arr);
 }
-//bubbleSort();
+//console.log(bubbleSort());
 
 function selectSort(arr) {
     for (i = 0; i < arr.length - 1; i++) {
@@ -288,9 +287,9 @@ function selectSort(arr) {
         arr[minElem] = arr[i];
         arr[i] = temp;
     }
-    console.log(arr);
+    return (arr);
 }
-//selectSort();
+//console.log(selectSort());
 
 function insertSort(arr) {
 
@@ -304,9 +303,9 @@ function insertSort(arr) {
         arr[j + 1] = value;
 
     }
-    console.log(arr);
+    return (arr);
 }
-//insertSort();
+//console.log(insertSort());
 
 
 //Функции
@@ -340,9 +339,9 @@ function dayOfWeek(day){
         default :
             valueDay = "Нет такого дня";
     }
-    console.log(valueDay);
+    return (valueDay);
 }
-//dayOfWeek();
+//console.log(dayOfWeek());
 
 /*Вводим число (0-999), получаем строку с прописью числа.*/
 
@@ -355,20 +354,20 @@ function numberToString(number) {
     let arr3 = ['сто', 'двесте', 'триста', 'четыреста', 'пятсот', 'шестсот', 'семсот', 'восемсот', 'девятсот'];
 
     if (arrNum.length == 3 && arrNum[1] == 1) {
-        console.log(arr3[arrNum[0] - 1] + " " + arr1[arrNum[2]]);
+        return (arr3[arrNum[0] - 1] + " " + arr1[arrNum[2]]);
     } else if (arrNum.length == 3 && arrNum[1] == 0){
-        console.log(arr3[arrNum[0] - 1] + " " + arr0[arrNum[2] - 1]);
+        return (arr3[arrNum[0] - 1] + " " + arr0[arrNum[2] - 1]);
     } else if (arrNum.length == 3) {
-        console.log(arr3[arrNum[0] - 1] + " " + arr2[arrNum[1] - 2] + " " + arr0[arrNum[2] - 1]);
+        return (arr3[arrNum[0] - 1] + " " + arr2[arrNum[1] - 2] + " " + arr0[arrNum[2] - 1]);
     } else if (arrNum.length == 2 && arrNum[0] == 1) {
-        console.log(arr1[arrNum[1]]);
+        return (arr1[arrNum[1]]);
     } else if (arrNum.length == 2 && arrNum[0] != 1) {
-        console.log(arr2[arrNum[0] - 2] + ' ' + arr0[arrNum[1] - 1]);
+        return (arr2[arrNum[0] - 2] + ' ' + arr0[arrNum[1] - 1]);
     } else if (arrNum.length == 1) {
-        console.log(arr0[arrNum[0] - 1])
+        return (arr0[arrNum[0] - 1])
     }
 }
-//numberToString();
+//console.log(numberToString());
 
 /*Вводим строку, которая содержит число, написанное прописью (0-999). Получить само число*/
 function strokaChislo(number){
@@ -425,16 +424,16 @@ function strokaChislo(number){
         case 'ноль': newNum += 0; break;
     }  // простые
 
-    console.log(newNum);
+    return (newNum);
 
 };
-//strokaChislo();
+//console.log(strokaChislo());
 
 /*Найти расстояние между двумя точками в двумерном декартовом пространстве.*/
 distance = (x1, y1, x2, y2) => {
 
-    console.log(Math.sqrt((Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2))));
+    return (Math.sqrt((Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2))));
 
 };
-//   distance();
+//console.log (distance());
 
