@@ -8,7 +8,7 @@ function evenNumber(a, b) {
         return (a + b);
     }
 };
-//console.log(evenNumber());
+console.log(evenNumber());
 
 
 /* Определить какой четверти принадлежит точка с координатами (x, y)*/

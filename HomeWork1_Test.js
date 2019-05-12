@@ -19,7 +19,7 @@ describe('test evenNumber', () => {
     for (let testSuit of testedData) {
         it(`test  value1 ${testSuit['a']} value2 ${testSuit['b']} expected ${testSuit['expected']}`, function () {
             const act = evenNumber(testSuit['a'], testSuit['b']);
-            assert.equal(act, testSuit['expected']);
+            assert.deepEqual(act, testSuit['expected']);
         });
     }
 });
@@ -522,9 +522,7 @@ describe('test reversOfArray', () => {
     for (let testSuit of testedData) {
         it(`test  value1 ${testSuit['a']} expected ${testSuit['expected']}`, function () {
             const act = reversOfArray(testSuit['a']);
-            for (let i = 0; i < act.length; i++) {
-                assert.equal(testSuit['expected'][i], act[i]);
-            }
+            assert.deepEqual(testSuit['expected'], act);
         });
     }
 });
@@ -613,9 +611,7 @@ describe('test bubbleSort', () => {
     for (let testSuit of testedData) {
         it(`test  value1 ${testSuit['a']} expected ${testSuit['expected']}`, function () {
             const act = bubbleSort(testSuit['a']);
-            for (let i = 0; i < act.length; i++) {
-                assert.equal(testSuit['expected'][i], act[i]);
-            }
+            assert.deepEqual(testSuit['expected'], act);
         });
     }
 });
