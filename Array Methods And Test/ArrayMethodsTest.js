@@ -224,3 +224,30 @@ describe('test method toString', function () {
         });
     }
 });
+
+describe('test method Map', function () {
+
+    let arrList = null;
+
+    before(function () {
+        arrList = new ArrayList();
+    });
+
+    const testedData = [
+        {
+            'a': 2,
+            'expected': [14, 26, 10, 32, 44, 4]
+        },
+        {
+            'a': 3,
+            'expected': [42, 78, 30, 96, 132, 12]
+        }
+    ];
+
+    for (let testSuit of testedData) {
+        it(`test value1 ${testSuit['a']} expected ${testSuit['expected']}`, function () {
+            const act = arrList.newMap(testSuit['a']);
+            assert.deepEqual(act, testSuit['expected']);
+        });
+    }
+});

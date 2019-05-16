@@ -91,6 +91,16 @@ function ArrayList() {
         }
         return value;
     };
+
+    this.newMap = function (a) {
+        let newArray = [];
+
+        for (let i = 0; i < this.items.length; i++){
+            newArray[i] = this.items[i]*a;
+        }
+        this.items = newArray;
+        return this.items;
+    }
 };
 
 
