@@ -42,6 +42,4 @@ function MyList() {
 
     MyList.prototype.newMap = function () {};
 
-
-
 }
