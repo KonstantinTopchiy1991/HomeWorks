@@ -16,6 +16,9 @@
 // }
 
 
+/**
+ * @return {boolean}
+ */
 function BinarySearch(arr, value) {
 
     let left = 0;
@@ -28,7 +31,7 @@ function BinarySearch(arr, value) {
         if (arr[middle] === value){
             return true;
         }
-        
+
         if (arr[middle] < value){
             left = middle + 1;
         }

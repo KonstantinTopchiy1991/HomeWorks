@@ -84,5 +84,53 @@ function BinarySearchTree() {
         }
         return current.data;
     };
+
+    this.removeNode = function (node, data) {
+        let removedNode;
+        if(!node || isNaN(data) || !data){
+            return undefined;
+        }
+        if (this.root.data === data) {
+            if (node.left) {
+                let arrayBufferTree = this.globalNodeToArray(node.right);
+                removedNode = node.right;
+                node.right = undefined;
+                this.root = node.left;
+                this.arrayToTree(arrayBufferTree);
+                return removedNode.data;
+
+            } else if (node.right) {
+                let arrayBufferTree = this.globalNodeToArray(node.left);
+                removedNode = node.left;
+                node.left = undefined;
+                this.root = node.right;
+                this.arrayToTree(arrayBufferTree);
+                return removedNode.data;
+            } else {
+                return this.root = undefined;
+            }
+        }
+
+        else if (node.left && node.left.data === data) {
+            let arrayBufferTree = this.globalNodeToArray(node.left.left);
+            removedNode = node.left;
+            node.left.left = undefined;
+            node.left = node.left.right;
+            this.arrayToTree(arrayBufferTree);
+            return removedNode.data
+        } else if (node.right && node.right.data === data) {
+            let arrayBufferTree = this.globalNodeToArray(node.right.right);
+            removedNode = node.right;
+            node.right.right = undefined;
+            node.right = node.right.left;
+            this.arrayToTree(arrayBufferTree);
+            return removedNode.data
+        } else if (node.data > data) {
+            return this.removeNode(node.left, data);
+        } else if (node.data < data) {
+            return this.removeNode(node.right, data);
+
+        }
+    }
 }
 
